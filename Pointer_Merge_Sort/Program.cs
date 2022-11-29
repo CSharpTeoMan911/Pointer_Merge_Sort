@@ -38,40 +38,89 @@ namespace Pointer_Merge_Sort
 
             if (arr_length > 1)
             {
+
+                // SORTING PROCEDURE
+
+
+
+
+
+                // THE NUMBER OF ELEMENTS IN THE LEFT HALF OF THE MAIN POINTER "arr"
                 int l_arr_length = arr_length / 2;
+
+                // THE NUMBER OF ELEMENTS IN THE RIGHT HALF OF THE MAIN POINTER "arr"
                 int r_arr_length = arr_length - (arr_length / 2);
 
 
 
 
 
-
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS THE NUMBER OF INTEGERS OF THE LEFT HALF OF THE MAIN POINTER TO A DESIGNATED POINTER
                 System.Runtime.InteropServices.GCHandle l_arr_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(new int[l_arr_length], System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // LEFT POINTER HAS ASSIGNED THE INTEGERS ALLOCATED BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* l_arr = (int*)l_arr_p_handle.AddrOfPinnedObject();
 
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS THE NUMBER OF INTEGERS OF THE RIGHT HALF OF THE MAIN POINTER TO A DESIGNATED POINTER
                 System.Runtime.InteropServices.GCHandle r_arr_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(new int[r_arr_length], System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // RIGHT POINTER HAS ASSIGNED THE INTEGERS ALLOCATED BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* r_arr = (int*)r_arr_p_handle.AddrOfPinnedObject();
 
 
 
+
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS AN INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE LEFT HALF OF THE MAIN POINTER DURING THE SORTING PROCEDURE
                 System.Runtime.InteropServices.GCHandle l_arr_sort_index_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(0, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // POINTER THAT HAS ALLOCATED THE INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE LEFT HALF OF THE MAIN POINTER BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* l_arr_sort_index = (int*)l_arr_sort_index_p_handle.AddrOfPinnedObject();
 
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS AN INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE RIGHT HALF OF THE MAIN POINTER DURING THE SORTING PROCEDURE
                 System.Runtime.InteropServices.GCHandle r_arr_sort_index_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(0, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // POINTER THAT HAS ALLOCATED THE INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE RIGHT HALF OF THE MAIN POINTER BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* r_arr_sort_index = (int*)r_arr_sort_index_p_handle.AddrOfPinnedObject();
 
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS AN INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE MAIN POINTER DURING THE SORTING PROCEDURE
                 System.Runtime.InteropServices.GCHandle arr_sort_index_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(0, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // POINTER THAT HAS ALLOCATED THE INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE MAIN POINTER BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* arr_sort_index = (int*)arr_sort_index_p_handle.AddrOfPinnedObject();
 
 
 
+
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS AN INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE LEFT HALF OF THE MAIN POINTER DURING THE MERGING PROCEDURE
                 System.Runtime.InteropServices.GCHandle l_arr_merge_index_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(0, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // POINTER THAT HAS ALLOCATED THE INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE LEFT HALF OF THE MAIN POINTER BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* l_arr_merge_index = (int*)l_arr_merge_index_p_handle.AddrOfPinnedObject();
 
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS AN INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE RIGHT HALF OF THE MAIN POINTER DURING THE MERGING PROCEDURE
                 System.Runtime.InteropServices.GCHandle r_arr_merge_index_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(0, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // POINTER THAT HAS ALLOCATED THE INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE RIGHT HALF OF THE MAIN POINTER BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* r_arr_merge_index = (int*)r_arr_merge_index_p_handle.AddrOfPinnedObject();
 
+
+
+                // HANDLE THAT IS ALLOCATING AT A MEMORY ADDRESS AN INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE MAIN POINTER DURING THE MERGING PROCEDURE
                 System.Runtime.InteropServices.GCHandle arr_merge_index_p_handle = System.Runtime.InteropServices.GCHandle.Alloc(0, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+                // POINTER THAT HAS ALLOCATED THE INTEGER THAT IS USED TO TRAVERSE THE ELEMENTS OF THE MAIN POINTER BY THE HANDLE AT A MEMORY ADDRESS, AND THAT IS USED FOR ACCESSING THEM
                 int* arr_merge_index = (int*)arr_merge_index_p_handle.AddrOfPinnedObject();
 
 
@@ -79,7 +128,17 @@ namespace Pointer_Merge_Sort
 
 
 
-                
+
+
+
+
+
+            // MERGING PROCEDURE
+
+
+
+
+
 
 
             L_ARR_RECURSION:
@@ -171,6 +230,10 @@ namespace Pointer_Merge_Sort
                 }
 
 
+
+
+                // DEALLOCATE THE HANDLE OBJECTS AND THEIR CONTENT FROM MEMORY
+
                 l_arr_p_handle.Free();
                 r_arr_p_handle.Free();
 
@@ -196,11 +259,23 @@ namespace Pointer_Merge_Sort
 
         private static unsafe Task<bool> Async_Implementation()
         {
-            System.Runtime.InteropServices.GCHandle arr_lenght_handle = System.Runtime.InteropServices.GCHandle.Alloc(1000000, System.Runtime.InteropServices.GCHandleType.Pinned);
+            // HANDLE THAT IS ALLOCATING THE AN INTEGER THAT IS REPRESENTING THE NUMBER OF ELEMENTS THAT CAN BE STORED WITHIN THE MAIN POINTER
+            System.Runtime.InteropServices.GCHandle arr_lenght_handle = System.Runtime.InteropServices.GCHandle.Alloc(10000000, System.Runtime.InteropServices.GCHandleType.Pinned);
+
+            // POINTER THAT IS STORING THE AN INTEGER THAT IS REPRESENTING THE NUMBER OF ELEMENTS THAT CAN BE STORED WITHIN THE MAIN POINTER, ALLOCATED AT A MEMORY ADDRESS
             int* arr_lenght = (int*)arr_lenght_handle.AddrOfPinnedObject();
 
+
+
+            // HANDLE THAT IS ALLOCATING A NUMBER OF ELEMENTS THAT CAN BE STORED WITHIN THE MAIN POINTER
             System.Runtime.InteropServices.GCHandle arr_handle = System.Runtime.InteropServices.GCHandle.Alloc(new int[*arr_lenght], System.Runtime.InteropServices.GCHandleType.Pinned);
+
+            // POINTER THAT IS STORING THE NUMBER OF ELEMENTS THAT CAN BE STORED WITHIN THE MAIN POINTER, ALLOCATED AT A MEMORY ADDRESS
             int* arr = (int*)arr_handle.AddrOfPinnedObject();
+
+
+
+
 
             Random r = new Random();
 
@@ -221,7 +296,7 @@ namespace Pointer_Merge_Sort
             Merge_Sort(arr, *arr_lenght);
             s.Stop();
 
-            Console.WriteLine("TIME TOOK TO SORT 1000000 RANDOM INTEGERS: " + s.ElapsedMilliseconds + " MILLISECONDS");
+            Console.WriteLine("TIME TOOK TO SORT " + *arr_lenght + " RANDOM INTEGERS: " + s.ElapsedMilliseconds + " MILLISECONDS");
 
             millisecond_results[recursion] = (int)s.ElapsedMilliseconds;
             
