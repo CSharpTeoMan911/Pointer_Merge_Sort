@@ -302,6 +302,9 @@ namespace Pointer_Merge_Sort
             
             
 
+
+            // DEALLOCATING THE HANDLES AND THEIR CONTENT FROM MEMORY
+
             arr_handle.Free();
             arr_lenght_handle.Free();
 
