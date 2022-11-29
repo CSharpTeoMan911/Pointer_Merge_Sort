@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,22 @@ namespace Pointer_Merge_Sort
 {
     internal class Program
     {
+
+
+        ////////////////////////////////////////////////////////////////////////////
+        ///                 Copyright (c) Teodor Mihail 2022                     ///
+        ///                                                                      ///
+        ///     DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER     ///
+        ///                                                                      ///
+        ///                                                                      ///
+        /// This code is free software; you can redistribute it and/or modify it ///
+        /// under the terms of the GNU General Public License version 2 only, as ///
+        /// This code is free software; you can redistribute it and/or modify it ///
+        ///                                                                      ///
+        ////////////////////////////////////////////////////////////////////////////
+
+
+
         private static int recursion = 0;
         private static int[] millisecond_results = new int[100];
 
