@@ -260,7 +260,7 @@ namespace Pointer_Merge_Sort
         private static unsafe Task<bool> Async_Implementation()
         {
             // HANDLE THAT IS ALLOCATING THE AN INTEGER THAT IS REPRESENTING THE NUMBER OF ELEMENTS THAT CAN BE STORED WITHIN THE MAIN POINTER
-            System.Runtime.InteropServices.GCHandle arr_lenght_handle = System.Runtime.InteropServices.GCHandle.Alloc(10000000, System.Runtime.InteropServices.GCHandleType.Pinned);
+            System.Runtime.InteropServices.GCHandle arr_lenght_handle = System.Runtime.InteropServices.GCHandle.Alloc(1000000, System.Runtime.InteropServices.GCHandleType.Pinned);
 
             // POINTER THAT IS STORING THE AN INTEGER THAT IS REPRESENTING THE NUMBER OF ELEMENTS THAT CAN BE STORED WITHIN THE MAIN POINTER, ALLOCATED AT A MEMORY ADDRESS
             int* arr_lenght = (int*)arr_lenght_handle.AddrOfPinnedObject();
