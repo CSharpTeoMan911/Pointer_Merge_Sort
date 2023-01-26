@@ -1,6 +1,7 @@
 # Pointer_Merge_Sort
 
 An implementation of the Merge Sort that is using pointers to sort integers. This implementation uses manual memory allocation and deallocation. This implementation is useful because Merge Sort is notorius for its large memory consumption and due to this fact, liked lists have to be used, which will hamper the performace dramatically.
+Using pointers in this implementation is best of both worlds, the speed similar with an array, the runtime memory consumption similar with a linked list.
 
 <br>
 <br>
