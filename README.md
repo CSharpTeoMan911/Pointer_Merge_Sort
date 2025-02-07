@@ -1,5 +1,9 @@
 # Pointer Merge Sort in C# 🚀
 ## Overview
+
+![image](https://github.com/user-attachments/assets/c697c8a4-70dd-4846-8eb4-62119368ad08)
+
+
 This project demonstrates an advanced implementation of the Merge Sort algorithm using unsafe code and pointer manipulation in C#. The goal is twofold:
 
 1) Performance Optimization ⚡: Merge Sort is traditionally known for its high memory usage due to frequent array copying. By leveraging pointers and manual memory management, this implementation minimizes memory overhead while maintaining the efficiency of the algorithm.
