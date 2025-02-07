@@ -16,7 +16,7 @@ This project demonstrates an advanced implementation of the Merge Sort algorithm
 * Pointer-Based Memory Management 🧠: Unlike typical C# applications, this implementation manipulates memory directly using pointers, enabling low-level memory optimization while sorting.
 * Manual Memory Allocation and Deallocation 💻: Using GCHandle to pin memory allows the program to work with pointers without worrying about garbage collection interference, mimicking manual memory management seen in C and C++.
 * Merge Sort Algorithm 🏃: A classic divide-and-conquer sorting algorithm, implemented using pointer-based memory handling for better performance and reduced memory consumption.
-* Benchmarking Performance 📊: The project benchmarks the sorting time over 100 iterations to highlight the performance improvements and memory management efficiency.
+* Benchmarking Performance 📊: The project benchmarks the sorting time over all iterations to highlight the performance improvements and memory management efficiency.
 
 ## Why This Project? 🤔
 While C# is often seen as a higher-level language, this project aims to prove that it can perform low-level memory manipulation operations typically associated with languages like C and C++. By using unsafe code, we can access and manipulate raw memory directly, improving performance without sacrificing the ease of programming that C# provides.
