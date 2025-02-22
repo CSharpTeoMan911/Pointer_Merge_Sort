@@ -1,8 +1,7 @@
 # Pointer Merge Sort in C# 🚀
 ## Overview
 
-![image](https://github.com/user-attachments/assets/c697c8a4-70dd-4846-8eb4-62119368ad08)
-
+![Pointer-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d0e5aca1-581a-4167-9537-75de9cfa58e6)
 
 This project demonstrates an advanced implementation of the Merge Sort algorithm using unsafe code and pointer manipulation in C#. The goal is twofold:
 
